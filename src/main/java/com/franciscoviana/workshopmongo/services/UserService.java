@@ -23,9 +23,6 @@ public class UserService {
 
 	public User findById(String id) {
 		Optional<User> user = repo.findById(id);
-		if (user == null) {
-			throw new ObjectNotFoundException("Objeto não encontrado!");
-		}
 		return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
 	}
 
